@@ -1,0 +1,5 @@
+- AuthProperties：配置登录校验需要拦截的路径，因为不是所有的路径都需要登录才能访问
+- JwtProperties：定义与JWT工具有关的属性，比如秘钥文件位置
+- SecurityConfig：工具的自动装配
+- JwtTool：JWT工具，其中包含了校验和解析token的功能
+- hmall.jks：秘钥文件

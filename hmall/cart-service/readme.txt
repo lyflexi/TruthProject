@@ -1,0 +1,2 @@
+car-service要通过item-service查询最新的商品价格信息，
+因此购物车服务要调用他们，必须通过OpenFeign远程调用。我们需要将上述功能抽取为FeignClient.

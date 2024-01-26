@@ -13,10 +13,15 @@ spring:
   cloud:
     nacos:
       server-addr: 192.168.18.100:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+      http-method-specify: true # 开启请求方式前缀
 feign:
   okhttp:
     enabled: true # 开启OKHttp功能
-
+  sentinel:
+    enabled: true # 开启feign对sentinel的支持
 mybatis-plus:
   configuration:
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
