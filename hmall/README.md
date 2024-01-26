@@ -1,8 +1,11 @@
 分布式黑马商城
 reference：https://b11et3un53m.feishu.cn/wiki/NNAtw4CFQijiYakX8tgczWvWn0b
 # 技术背景
-
+- springboot
+- feign
+- gateway
 - nacos
+- sentinel
 - seata
 
 # 环境
