@@ -10,7 +10,7 @@ import feign.Logger;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.context.annotation.Bean;
-import com.hmall.api.client.fallback.ItemClientFallback;
+import com.hmall.api.fallback.ItemClientFallback;
 
 /*-
 Feign默认的日志级别就是NONE，所以默认我们看不到请求日志。

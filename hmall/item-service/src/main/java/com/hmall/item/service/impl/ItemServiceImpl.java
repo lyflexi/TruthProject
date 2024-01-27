@@ -10,6 +10,7 @@ import com.hmall.item.domain.po.Item;
 import com.hmall.item.mapper.ItemMapper;
 import com.hmall.item.service.IItemService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,14 +26,17 @@ import java.util.List;
 public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements IItemService {
 
     @Override
+    @Transactional
     public void deductStock(List<OrderDetailDTO> items) {
         String sqlStatement = "com.hmall.mapper.item.ItemMapper.updateStock";
         boolean r = false;
         try {
             r = executeBatch(items, (sqlSession, entity) -> sqlSession.update(sqlStatement, entity));
         } catch (Exception e) {
-            log.error("更新库存异常", e);
-            return;
+//            log.error("更新库存异常", e);
+//            return;
+            //这里要想让提交订单业务的分布式事务生效，必须抛出异常，不能私自捕获
+            throw new BizIllegalException("库存不足！");
         }
         if (!r) {
             throw new BizIllegalException("库存不足！");

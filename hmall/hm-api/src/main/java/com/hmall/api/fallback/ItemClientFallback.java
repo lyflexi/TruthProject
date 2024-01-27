@@ -1,4 +1,4 @@
-package com.hmall.api.client.fallback;
+package com.hmall.api.fallback;
 
 import com.hmall.api.client.ItemClient;
 import com.hmall.api.dto.ItemDTO;

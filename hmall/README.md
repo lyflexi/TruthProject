@@ -154,3 +154,17 @@ Nacos统一配置管理，解决服务拆分两大痛点
   - 编写降级逻辑-等待fallback，提供友好的返回信息
 - 服务熔断-快速fallback，极限提高吞吐量
 
+# 分布式事务解决方案seata
+提前创建seata-server容器服务，注意要与MySQL和nacos配置在同一网络下
+
+seata-server搭建成功，访问seata-server控制面板：http://192.168.18.100:7099/#/GlobalLockInfo
+
+业务相关的模块均引入seata依赖，seata依赖相当于操作seata的客户端
+```xml
+  <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+  </dependency>
+```
+- XA二阶段提交
+- AT二阶段提交
