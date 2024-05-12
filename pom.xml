@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.heima</groupId>
-    <artifactId>hmall</artifactId>
+    <artifactId>DistributedMall-heima</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
