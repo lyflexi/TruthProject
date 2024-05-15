@@ -8,6 +8,7 @@
     <artifactId>DistributedMall-heima</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
+    <!--根目录是单体版hmall，只包含两个老模块-->
     <modules>
         <module>hm-common</module>
         <module>hm-service</module>
